@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ImmunoSphere | Immunization Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- SPLASH SCREEN -->
+  <section id="splashScreen" class="splash-screen">
+    <div class="splash-content">
+      <div class="splash-logo">🛡️</div>
+      <h1>ImmunoSphere</h1>
+      <p>AI-Powered Immunization & Vaccination Platform</p>
+      <div class="splash-loader"><span></span></div>
+      <small>Protecting Every Child • Building a Healthy Future</small>
+    </div>
+  </section>
+
+  <!-- AUTH -->
+  <section id="authScreen" class="auth-screen">
+    <div class="auth-brand">
+      <div class="logo-mark">🛡️</div>
+      <div>
+        <h1>ImmunoSphere</h1>
+        <p>AI-Powered Immunization & Vaccination Platform</p>
+      </div>
+    </div>
+
+    <div class="auth-card">
+      <div class="auth-hero">
+        <span class="eyebrow">WELCOME TO IMMUNOSPHERE</span>
+        <h2 id="authTitle">Protect Every Child.<br><span>Build a Healthy Future.</span></h2>
+        <p id="authSubtitle">A connected platform for parents, vaccinators and supervisors.</p>
+      </div>
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-auth="login">Login</button>
+        <button class="auth-tab" data-auth="signup">Sign Up</button>
+      </div>
+
+      <form id="loginForm" class="auth-form">
+        <label>Email<input id="loginEmail" type="email" placeholder="you@example.com" required></label>
+        <label>Password<input id="loginPassword" type="password" placeholder="••••••••" required></label>
+        <div class="auth-row"><label class="check"><input type="checkbox"> Remember me</label><button type="button" class="text-btn" id="forgotBtn">Forgot Password?</button></div>
+        <button class="primary wide" type="submit">Login</button>
+        <p class="auth-note">Don't have an account? <button type="button" class="text-btn switch-auth">Create Account</button></p>
+        <p id="loginError" class="error"></p>
+      </form>
+
+      <form id="signupForm" class="auth-form hidden">
+        <label>Full Name<input id="signupName" type="text" placeholder="Enter your full name" required></label>
+        <label>Email<input id="signupEmail" type="email" placeholder="you@example.com" required></label>
+        <label>Password<input id="signupPassword" type="password" placeholder="Create password" minlength="6" required></label>
+        <label>Confirm Password<input id="signupConfirm" type="password" placeholder="Confirm password" minlength="6" required></label>
+        <label>Role
+          <select id="signupRole" required>
+            <option value="">Select your role</option>
+            <option value="parent">Parent / Guardian</option>
+            <option value="vaccinator">Vaccinator</option>
+            <option value="supervisor">Supervisor</option>
+          </select>
+        </label>
+        <div id="parentCnicWrap" class="hidden"><label>CNIC<input id="signupCnic" type="text" maxlength="15" placeholder="xxxxx-xxxxxxx-x"></label></div>
+        <button class="primary wide" type="submit">Create Account</button>
+        <p class="auth-note">Already registered? <button type="button" class="text-btn switch-auth">Login</button></p>
+        <p id="signupError" class="error"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- APP -->
+  <section id="appScreen" class="app-screen hidden">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo-small">🛡️</div>
+        <div><strong>ImmunoSphere</strong><small>Immunization Portal</small></div>
+      </div>
+      <div class="top-actions">
+        <span id="dateNow"></span>
+        <div class="user-chip" id="topUser"></div>
+        <button id="logoutBtn" class="logout">Logout</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-user" id="sidebarUser"></div>
+        <nav id="nav"></nav>
+      </aside>
+
+      <main class="main">
+        <div id="page"></div>
+      </main>
+    </div>
+  </section>
+</div>
+
+<!-- MODALS -->
+<div id="modal" class="modal hidden"><div class="modal-card" id="modalContent"></div></div>
+
+<script src="script.js"></script>
+</body>
+</html>
